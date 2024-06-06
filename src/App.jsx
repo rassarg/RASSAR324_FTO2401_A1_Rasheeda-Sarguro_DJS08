@@ -1,22 +1,30 @@
+// React dependencies
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Components Folder
+import HostLayout from "../components/HostLayout";
+import Layout from "../components/Layout";
+
+// Pages Folder
 import About from "../pages/About";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
-import Vans from "../pages/Vans/Vans.jsx";
-import VanDetail from "../pages/Vans/VanDetail.jsx";
-import Layout from "../components/Layout";
-import HostLayout from "../components/HostLayout";
+// Host Folder
+import Dashboard from "../pages/Host/Dashboard.jsx";
 import HostVanDetail from "../pages/Host/HostVanDetail";
 import HostVanInfo from "../pages/Host/HostVanInfo";
-import HostVanPricing from "../pages/Host/HostVanPricing";
 import HostVanPhotos from "../pages/Host/HostVanPhotos";
-import Dashboard from "../pages/Host/Dashboard.jsx";
+import HostVanPricing from "../pages/Host/HostVanPricing";
+import HostVans from "../pages/Host/HostVans";
 import Income from "../pages/Host/Income.jsx";
 import Reviews from "../pages/Host/Reviews.jsx";
-import HostVans from "../pages/Host/HostVans";
+// Vans Folder
+import VanDetail from "../pages/Vans/VanDetail.jsx";
+import Vans from "../pages/Vans/Vans.jsx";
 
+// Main Folder
 import "../server.js";
 
 export default function App() {

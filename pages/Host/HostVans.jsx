@@ -1,13 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getHostVans } from "../../api";
 
 export default function HostVans() {
   const [vans, setVans] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans();
+        setVans(data);
+      } catch (err) {
+        console.log("There was an error!");
+        console.log(err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVans();
   }, []);
 
   const hostVansEls = vans.map((van) => (
@@ -21,6 +35,15 @@ export default function HostVans() {
       </div>
     </Link>
   ));
+
+  // UI for when awaiting api fetch request
+  if (loading) {
+    return <h1 aria-live="polite">Loading...</h1>;
+  }
+  // UI for if error is thrown
+  if (error) {
+    return <h1 aria-live="assertive">There was an error: {error.message}</h1>;
+  }
 
   return (
     <section>

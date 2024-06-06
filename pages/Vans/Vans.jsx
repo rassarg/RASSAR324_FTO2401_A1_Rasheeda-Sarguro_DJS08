@@ -65,11 +65,11 @@ export default function Vans() {
   }
   // UI for when awaiting api fetch request
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 aria-live="polite">Loading...</h1>;
   }
   // UI for if error is thrown
   if (error) {
-    return <h1>There was an error: {error.message}</h1>;
+    return <h1 aria-live="assertive">There was an error: {error.message}</h1>;
   }
   return (
     <div className="van-list-container">
