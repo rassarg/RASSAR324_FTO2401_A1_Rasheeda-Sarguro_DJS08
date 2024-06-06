@@ -10,7 +10,9 @@ import Layout from "../components/Layout";
 // Pages Folder
 import About from "../pages/About";
 import Home from "../pages/Home";
+import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
+
 // Host Folder
 import Dashboard from "../pages/Host/Dashboard.jsx";
 import HostVanDetail from "../pages/Host/HostVanDetail";
@@ -36,6 +38,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VanDetail />} />
+          <Route path="login" element={<Login />} />
 
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
