@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function VanDetail() {
   const params = useParams();
@@ -15,6 +15,10 @@ export default function VanDetail() {
   // JSX to render the van on the page || display a loading message if not yet rendered
   return (
     <div className="van-detail-container">
+      <Link to=".." relative="path" className="back-button">
+        &larr; <span>Back to all vans</span>
+      </Link>
+
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} />
