@@ -1,8 +1,10 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 export default function VanDetail() {
   const params = useParams();
+  const location = useLocation();
+  console.log(location);
   const [van, setVan] = React.useState(null);
 
   // Fetches the van data and sets it in localized state
@@ -13,10 +15,13 @@ export default function VanDetail() {
   }, [params.id]);
 
   // JSX to render the van on the page || display a loading message if not yet rendered
+  const search = (location.state && location.state.search) || ""; //  optional chaining ->  const search = location.state?.search || ""
+  const type = (location.state && location.state.type) || "all"; // const type = location.state?.type || "all"
+
   return (
     <div className="van-detail-container">
-      <Link to=".." relative="path" className="back-button">
-        &larr; <span>Back to all vans</span>
+      <Link to={`..${search}`} relative="path" className="back-button">
+        &larr; <span>Back to {type} vans</span>
       </Link>
 
       {van ? (
