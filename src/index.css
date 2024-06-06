@@ -547,6 +547,9 @@ i[class*="van-type-"] {
   background-color: #aaaaaa;
   cursor: not-allowed;
 }
+.login-first {
+  color: red;
+}
 
 .login-error {
   color: red;
