@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "../pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "../pages/About";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 import Vans from "../pages/Vans/Vans.jsx";
 import VanDetail from "../pages/Vans/VanDetail.jsx";
 import Layout from "../components/Layout";
@@ -39,6 +40,7 @@ export default function App() {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
