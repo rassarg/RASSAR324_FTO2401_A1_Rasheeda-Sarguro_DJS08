@@ -43,11 +43,17 @@ export default function App() {
           <Route path="login" element={<Login />} />
           {/*Layout route */}
           <Route element={<AuthRequired />}>
+            {/* parent component */}
             <Route path="host" element={<HostLayout />}>
+              {/* child component */}
               <Route index element={<Dashboard />} />
+              {/* nested component */}
               <Route path="income" element={<Income />} />
+              {/* nested component */}
               <Route path="reviews" element={<Reviews />} />
+              {/* nested component */}
               <Route path="vans" element={<HostVans />} />
+
               {/*Layout route */}
               <Route path="vans/:id" element={<HostVanDetail />}>
                 <Route index element={<HostVanInfo />} />
