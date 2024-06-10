@@ -3,8 +3,7 @@
 🎥 INSERT LOOM PRESENTATION LINK: [[Here](https://www.loom.com/share/e204f015433c423dac79a5df2fb85323?sid=abf8a1de-e293-4ebe-838e-109d3d26147d)]
 
 1. After cloning the repo, run `npm install` to install the dependencies.
-2. Run `npm install --save-dev miragejs` to install other dependencies for the server.js file
-3. Run `npm run dev` to render project.
+2. Run `npm run dev` to render project.
 
 To sign in as a host and navigate the app:
 email address: b@b.com
